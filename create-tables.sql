@@ -60,6 +60,7 @@ CREATE TABLE reports (
 
 -- Создание таблицы videos
 CREATE TABLE videos (
+    id bigint AUTO_INCREMENT PRIMARY KEY,
     download_url TEXT NULL,
     url TEXT NULL,
     content_type VARCHAR(50) NULL,
