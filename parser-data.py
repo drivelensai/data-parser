@@ -5,6 +5,7 @@ from mysql.connector import Error
 from dotenv import load_dotenv
 import os
 import time
+from .is_within_allowed_time import is_within_allowed_time
 # Load environment variables from .env
 load_dotenv()
 
@@ -172,6 +173,9 @@ def main():
     print(f"Последний обработанный индекс: {last_index}")
 
     for index, record in enumerate(records):
+        if not is_within_allowed_time():
+            while not is_within_allowed_time():
+                time.sleep(60*60*1)
         if index <= last_index:
             continue  # Пропускаем уже обработанные записи
         if index % 1000 == 0:
