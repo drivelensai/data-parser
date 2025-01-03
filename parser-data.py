@@ -5,7 +5,7 @@ from mysql.connector import Error
 from dotenv import load_dotenv
 import os
 import time
-from .is_within_allowed_time import is_within_allowed_time
+from is_within_allowed_time import is_within_allowed_time
 # Load environment variables from .env
 load_dotenv()
 
