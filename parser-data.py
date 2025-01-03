@@ -162,7 +162,8 @@ def get_last_processed_index(connection):
 
 def main():
     # Загружаем JSON-файл
-    with open("link_v4.json", "r", encoding="utf-8") as file:
+    json_file_path = os.path.join(os.path.dirname(__file__), "link_v4.json")
+    with open(json_file_path, "r", encoding="utf-8") as file:
         records = json.load(file)
 
     connection = connect_to_db()
